@@ -100,34 +100,52 @@
 //Task
 
 
-const sortArray = array => {
-    for (let i = 0; i < array.length - 1; i++) {
-        for (let j = i + 1; j < array.length; j++) {
-            if (array[j] < array[i]) {
-                let temp = array[j];
-                array[j] = array[i];
-                array[i] = temp;
-            }
-        }
-    }
-    return array;
-};
+// const sortArray = array => {
+//     for (let i = 0; i < array.length - 1; i++) {
+//         for (let j = i + 1; j < array.length; j++) {
+//             if (array[j] < array[i]) {
+//                 let temp = array[j];
+//                 array[j] = array[i];
+//                 array[i] = temp;
+//             }
+//         }
+//     }
+//     return array;
+// };
 
-let randArray = (n) => {
-let array = [];
-    for (let i = 0; i < n; i++) {
-        array.push(Math.floor(Math.random() * 100 - 50));
+// let randArray = (n) => {
+// let array = [];
+//     for (let i = 0; i < n; i++) {
+//         array.push(Math.floor(Math.random() * 100 - 50));
+//     }
+//     return array;
+// }
+
+// const showArr = array => array.forEach(element => { 
+//     console.log(element);
+// });
+
+
+
+// // showArr(sortArray(randArray(array)));
+
+// let sorted = sortArray(randArray(10));
+// showArr(sorted);
+
+let object =  {
+    a: 1,
+    b: 2
+}
+let toArray = (object) => {
+    let array = [];
+    for (let key in object) {
+        let temp = {};
+        temp[key] = object[key];
+        array.push(temp)
     }
     return array;
 }
 
-const showArr = array => array.forEach(element => { 
-    console.log(element);
-});
+let showArray = (array) => array.forEach(element => console.log(element));
 
-
-
-// showArr(sortArray(randArray(array)));
-
-let sorted = sortArray(randArray(10));
-showArr(sorted);
+showArray(toArray(object));
