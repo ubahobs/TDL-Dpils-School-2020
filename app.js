@@ -131,16 +131,47 @@
 
 
 //streams and buffers
-const fs = require('fs');
+// const fs = require('fs');
 
-const readStream = fs.createReadStream('./folder/blog3.txt', {encoding: 'utf8'});
-const writerStream = fs.createWriteStream('./folder/blog4.txt');
+// const readStream = fs.createReadStream('./folder/blog3.txt', {encoding: 'utf8'});
+// const writerStream = fs.createWriteStream('./folder/blog4.txt');
 
-readStream.on('data', (buffer) => {
-    // console.log('------------------- new chunk --------------------');
-    writerStream.write('\n------------------- new chunk --------------------\n')
-    writerStream.write(buffer)
-});
+// readStream.on('data', (buffer) => {
+//     // console.log('------------------- new chunk --------------------');
+//     writerStream.write('\n------------------- new chunk --------------------\n')
+//     writerStream.write(buffer)
+// });
+
+
+
+// module.exports = {
+//     sayHello() {
+//         return 'hello'
+//     }
+// }
+
+//Add another function - addNumber. Accepts (value1, value2)
+// return value1 + value2
+// Write a test to check if you pass 2 and 4
+// return 6
+
+
+// module.exports = {
+//     addNumbers(value1, value2) {
+//         return value1 + value2;
+//     }
+// }
+module.exports = {
+    toArray(object)  {
+        let array = [];
+        for (let key in object) {
+            let temp = [];
+           temp[key] = object[key];
+           array.push(temp)
+    }
+       return array;
+    }
+}
 
 
 
