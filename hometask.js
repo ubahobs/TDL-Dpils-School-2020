@@ -2,6 +2,9 @@ let object =  {
     a: 1,
     b: 2
 }
+
+let showArray = (array) => array.forEach(element => console.log(element));
+
 // let toArray = (object) => {
 //     let array = [];
 //     for (let key in object) {
@@ -11,9 +14,6 @@ let object =  {
 //     }
 //     return array;
 // }
-
-// let showArray = (array) => array.forEach(element => console.log(element));
-
 // showArray(toArray(object));
 
 let toArray = (object) => {
@@ -26,6 +26,4 @@ let toArray = (object) => {
     return array;
 }
 
-let showArray = (array) => array.forEach(element => console.log(element));
-
-showArray(toArray(object));
+showArray(toArray(object));z
