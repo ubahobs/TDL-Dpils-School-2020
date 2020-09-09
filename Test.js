@@ -31,11 +31,9 @@ let showFigure = (string, edge1, edge2) => {
     if (string == rectangle) {
         return rectangle.getInfo(edge1, edge2) + '\r\n' + rectangle.getArea(edge1, edge2);
     } else if (string == circle) {
-        console.log(circle.getInfo(edge1, edge2));
-        console.log(circle.getArea(edge1, edge2));
+        return circle.getInfo(edge1, edge2) + '\r\n' + circle.getArea(edge1, edge2);
     } else if (string == square) {
-        console.log(square.getInfo(edge1, edge2));
-        console.log(square.getArea(edge1, edge2));
+        return square.getInfo(edge1, edge2) + '\r\n' + square.getArea(edge1, edge2);
     } else console.log('Print correct figure');
 };
 
@@ -50,9 +48,9 @@ let printToFile = (object) => {
         }
     });
 }
-console.log(showFigure(rectangle, 2));
+console.log(showFigure(square, 2));
 
-printToFile(showFigure(rectangle));
+printToFile(showFigure(square));
 
 
 

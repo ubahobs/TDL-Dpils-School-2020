@@ -1,2 +1,2 @@
-The first edge: 30, and the second edge: 40 of this rectangle
-The area: 1200
+The edge of this square is: 90
+The area: 8100
