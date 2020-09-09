@@ -4,8 +4,8 @@ let rectangle = {
     getArea : function(edge1 = this.edge1, edge2 = this.edge2) {
         return `The area: ${edge1 * edge2}`;
     },
-    getInfo : function() {
-        return `The first edge: ${this.edge1}, and the second edge: ${this.edge2} of this rectangle`;
+    getInfo : function(edge1 = this.edge1, edge2 = this.edge2) {
+        return `The first edge: ${edge1}, and the second edge: ${edge2} of this rectangle`;
     }
 };
 let circle = {
@@ -14,36 +14,35 @@ let circle = {
     getArea : function(r = this.r) {
         return `The area: ${this.pi * Math.pow(r, 2)} `;
     },
-    getInfo : function() {
-        return `The radius of this circle is: ${this.r}`;
+    getInfo : function(r = this.r) {
+        return `The radius of this circle is: ${r}`;
     }
 };
 let square = {
     edge: 90,
     getArea : function(edge = this.edge) {
-        return `The area: {Math.pow(edge, 2)}`;
+        return `The area: ${Math.pow(edge, 2)}`;
     },
-    getInfo : function() {
-        return `The edge of this square is: ${this.edge}`;
+    getInfo : function(edge = this.edge) {
+        return `The edge of this square is: ${edge}`;
     }
 }
 let showFigure = (string, edge1, edge2) => {
     if (string == rectangle) {
-        console.log(rectangle.getInfo());
-        console.log(rectangle.getArea(edge1, edge2));
+        return rectangle.getInfo(edge1, edge2) + '\r\n' + rectangle.getArea(edge1, edge2);
     } else if (string == circle) {
-        console.log(circle.getInfo());
+        console.log(circle.getInfo(edge1, edge2));
         console.log(circle.getArea(edge1, edge2));
     } else if (string == square) {
-        console.log(square.getInfo());
+        console.log(square.getInfo(edge1, edge2));
         console.log(square.getArea(edge1, edge2));
     } else console.log('Print correct figure');
 };
 
 const fs = require('fs');
 
-let printToFile = (object, object2) => {
-    fs.writeFile('./Test.txt', object +'\r\n' + object2, (error) => {
+let printToFile = (object) => {
+    fs.writeFile('./Test.txt', object, (error) => {
         if (error) {
             console.log(error);
         } else {
@@ -51,9 +50,9 @@ let printToFile = (object, object2) => {
         }
     });
 }
-showFigure(rectangle, 2);
+console.log(showFigure(rectangle, 2));
 
-printToFile(rectangle.getInfo(), rectangle.getArea());
+printToFile(showFigure(rectangle));
 
 
 
